@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="interface.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="box" readonly>
+        <div class="button">
+            <button onclick="AC()">AC</button>
+            <button  onclick="DEL()">DEL</button>
+            <button  onclick="All('%')">%</button>
+            <button class="red"  onclick="All('/')">/</button>
+            <button  onclick="All(7)">7</button>
+            <button  onclick="All(8)">8</button>
+            <button  onclick="All(9)">9</button>
+            <button class="red"  onclick="All('*')">*</button>
+            <button  onclick="All(4)">4</button>
+            <button  onclick="All(5)">5</button>
+            <button  onclick="All(6)">6</button>
+            <button class="red" onclick="All('-')">-</button>
+            <button  onclick="All(1)">1</button>
+            <button  onclick="All(2)">2</button>
+            <button  onclick="All(3)">3</button>
+            <button class="red"  onclick="All('+')">+</button>
+            <button class="zero"  onclick="All(0)">0</button>
+            <button  onclick="All('.')">.</button>
+            <button class="red"  onclick="Calc()">=</button>
+        </div>
+    </div>
+
+    <script>
+        var val = document.getElementById("box")
+        function All(params){
+            val.value += params
+        } 
+        function Calc(){
+            val.value = eval(val.value)
+        }
+        function AC(){
+            val.value = " "
+        }
+        function DEL(){
+            val.value = val.value.toString().slice(0,-1)
+        }
+    </script>
+</body>
+</html>
